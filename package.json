@@ -1,0 +1,33 @@
+{
+  "name": "leti.js",
+  "version": "0.1.0",
+  "description": "Lightweight notification library",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/honzabilek4/leti.js.git"
+  },
+  "keywords": [
+    "javascript",
+    "notification",
+    "library",
+    "lightweight"
+  ],
+  "author": "honzabilek4",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/honzabilek4/leti.js/issues"
+  },
+  "homepage": "https://github.com/honzabilek4/leti.js#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.2.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2017": "^6.24.1",
+    "jest": "^23.3.0",
+    "regenerator-runtime": "^0.12.0"
+  }
+}
