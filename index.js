@@ -1,1 +1,1 @@
-import './src/leti.js';
+import Leti from './src/leti.js';
