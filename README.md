@@ -1,4 +1,4 @@
-# leti.js
+# WIP: leti.js
 Lightweight and easily customizable notification library.
 
 ## Installation
