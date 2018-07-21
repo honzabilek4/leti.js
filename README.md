@@ -58,8 +58,8 @@ const leti = new Leti({
 | ------ | ---- | ------- | ------- |
 | position | String | bottom right | [top,bottom] [left,right,center] |
 | delay | Number | 2000 | Number of miliseconds the notification should be visible |
-| icon | String |  - | Icon class. |
+| icon | String |  - | Icon class |
 
 ## License
 
-MIT
+[MIT](https://github.com/honzabilek4/leti.js/blob/master/LICENSE)
