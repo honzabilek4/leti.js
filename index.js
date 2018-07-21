@@ -1,1 +1,1 @@
-module.exports = require("./src/leti.js");
+import './src/leti.js';

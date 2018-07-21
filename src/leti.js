@@ -1,5 +1,5 @@
-module.exports =  class Leti {
+export default class Leti {
     constructor(options){
-        this.options = options;
+        this.options = options;        
     }
 }
