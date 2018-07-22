@@ -104,16 +104,77 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   // Override the current require with this new one
   return newRequire;
 })({"src/leti.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-module.exports = function Leti(options) {
-    _classCallCheck(this, Leti);
+var Leti = function () {
+    _createClass(Leti, [{
+        key: "defaultOptions",
+        get: function get() {
+            return {
+                types: {
+                    succes: {
+                        message: "Success"
+                    },
+                    error: {
+                        message: "Error"
+                    }
+                },
+                position: "bottom right"
+            };
+        }
+    }]);
 
-    this.options = options;
-    alert('Leti.js');
-};
+    function Leti(options) {
+        _classCallCheck(this, Leti);
+
+        this.options = Object.assign(this.defaultOptions, options);
+        this.buildMethodsFromTypes(this.options);
+    }
+
+    _createClass(Leti, [{
+        key: "buildMethodsFromTypes",
+        value: function buildMethodsFromTypes(options) {
+            var _this = this;
+
+            Object.keys(options.types).forEach(function (key) {
+                console.log(key);
+                Object.defineProperty(_this, key, {
+                    value: function value() {
+                        _this.triggerNotification(_this.options.types[key]);
+                    }
+                });
+            });
+        }
+    }, {
+        key: "triggerNotification",
+        value: function triggerNotification(options) {
+            console.log(options.message);
+        }
+    }]);
+
+    return Leti;
+}();
+
+exports.default = Leti;
 },{}],"index.js":[function(require,module,exports) {
-module.exports = require("./src/leti.js");
+'use strict';
+
+var _leti = require('./src/leti.js');
+
+var _leti2 = _interopRequireDefault(_leti);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+window.leti = new _leti2.default();
+console.log(leti);
 },{"./src/leti.js":"src/leti.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -143,7 +204,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '54631' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '57023' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
