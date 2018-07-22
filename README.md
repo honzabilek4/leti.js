@@ -25,7 +25,7 @@ Now you can simply call one of the default `success`, `error`, `warning`, `info`
     });
 ```
 
-You can create you own types of notification methods with different settigns passing a `types` Object into the constructor.
+You can create your own types of notification methods with different settigns passing a `types` Object into the constructor.
 
 ```js
 const leti = new Leti({
